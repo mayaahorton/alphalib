@@ -1,4 +1,4 @@
-name: Deploy 'site/' to Neocities
+name: Deploy 'sites/' to Neocities
 
 on:
   push:
@@ -16,13 +16,13 @@ jobs:
       - name: Install zip and curl
         run: sudo apt-get update && sudo apt-get install -y zip curl
 
-      - name: Zip site directory
+      - name: Zip sites directory
         run: |
-          cd site
-          zip -r ../site.zip .  # Zip everything in 'site/' into a file at the root
+          cd sites
+          zip -r ../sites.zip .  # Zip everything in 'site/' into a file at the root
 
       - name: Upload to Neocities
         run: |
-          curl -F "file=@site.zip" \
+          curl -F "file=@sites.zip" \
                -H "Authorization: Bearer ${{ secrets.NEOCITIES_API_KEY }}" \
                https://neocities.org/api/upload
