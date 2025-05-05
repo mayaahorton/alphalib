@@ -44,6 +44,14 @@ img {
 }
 
 /* lightbox setup */
+    .main-image {
+      max-width: 100%;
+      cursor: zoom-in;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
    .lightbox {
       display: none;
       position: fixed;
