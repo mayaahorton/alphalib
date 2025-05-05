@@ -1,5 +1,4 @@
 /* style.css */
-
 :root {
   --font-body: 'Helvetica Neue', sans-serif;
   --font-heading: 'Georgia', serif;
@@ -43,3 +42,47 @@ img {
   display: block;
   margin: 1rem 0;
 }
+
+/* lightbox setup */
+   .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
